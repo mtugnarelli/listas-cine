@@ -45,4 +45,15 @@ public class PruebaCinefilo {
 		
 		Assert.assertEquals("Pecados capitales", peliculaDeSuspenso.obtenerTitulo());
 	}
+	
+	@Test
+	public void removerCortometrajes() {
+		
+		Cinefilo cinefilo = new Cinefilo();
+		
+		cinefilo.filtrarCortometrajes(peliculas);
+		
+		Assert.assertEquals(1, peliculas.size());
+		Assert.assertEquals("Vuelo de pájaros", peliculas.get(0).obtenerTitulo());
+	}
 }

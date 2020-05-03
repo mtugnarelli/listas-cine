@@ -64,4 +64,22 @@ public class Cinefilo {
 		
 		return peliculaEncontrada;
 	}
+
+	/**
+	 * @post deja en 'peliculas' solo aquellas que son cortometrajes.
+	 */
+	public void filtrarCortometrajes(List<Pelicula> peliculas) {
+
+		Iterator<Pelicula> iterador = peliculas.iterator();
+		
+		while (iterador.hasNext()) {
+			
+			Pelicula unaPelicula = iterador.next();
+			
+			if (unaPelicula.obtenerDuracion() > 30) {
+				
+				iterador.remove();
+			}
+		}
+	}
 }
