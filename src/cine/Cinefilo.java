@@ -34,7 +34,7 @@ public class Cinefilo {
 		
 		for (Pelicula unaPelicula : peliculas) {
 			
-			if (unaPelicula.obtenerGenero() == generoElegido) {
+			if (unaPelicula.tiene(generoElegido)) {
 				
 				cuenta++;
 			}
@@ -56,7 +56,7 @@ public class Cinefilo {
 			
 			Pelicula unaPelicula = iterador.next();
 			
-			if (unaPelicula.obtenerGenero() == generoElegido) {
+			if (unaPelicula.tiene(generoElegido)) {
 				
 				peliculaEncontrada = unaPelicula;
 			}
@@ -78,7 +78,7 @@ public class Cinefilo {
 			
 			Pelicula unaPelicula = iterador.previous();
 			
-			if (unaPelicula.obtenerGenero() == generoElegido) {
+			if (unaPelicula.tiene(generoElegido)) {
 				
 				peliculaEncontrada = unaPelicula;
 			}
@@ -98,7 +98,7 @@ public class Cinefilo {
 			
 			Pelicula unaPelicula = iterador.next();
 			
-			if (unaPelicula.obtenerDuracion() > 30) {
+			if (unaPelicula.esLargometraje()) {
 				
 				iterador.remove();
 			}

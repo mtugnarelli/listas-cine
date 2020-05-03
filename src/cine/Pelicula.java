@@ -36,4 +36,14 @@ public class Pelicula {
 		
 		return duracion;
 	}
+
+	public boolean esLargometraje() {
+		
+		return duracion > 30;
+	}
+
+	public boolean tiene(Genero unGenero) {
+
+		return genero == unGenero;
+	}
 }
