@@ -18,6 +18,16 @@ public class Cartelera {
 		Pelicula pelicula = crearPelicula("  Matrix  , ACCION  , 136  ");
 		
 		peliculas.add(pelicula);
+
+		Pelicula otraPelicula = crearPelicula("El resplandor, TERROR, 146");
+		
+		peliculas.add(otraPelicula);
+		
+		peliculas.add(otraPelicula);
+		
+		peliculas.add(null);
+
+		peliculas.add(crearPelicula("2001: Odisea del espacio, CIENCIA_FICCION, 142"));
 		
 		return peliculas;
 	}
