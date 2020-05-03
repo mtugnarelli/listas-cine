@@ -1,4 +1,5 @@
 package cine;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Cartelera {
@@ -12,6 +13,9 @@ public class Cartelera {
 	
 	public List<Pelicula> obtenerPeliculas() throws ExcepcionEnElCine {
 		
-		return null;
+		List<Pelicula> peliculas = new LinkedList<Pelicula>();
+
+		return peliculas;
+
 	}
 }
