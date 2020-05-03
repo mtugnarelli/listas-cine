@@ -1,5 +1,6 @@
 package cine;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Cinefilo {
@@ -11,9 +12,11 @@ public class Cinefilo {
 
 		int duracionTotal = 0;
 		
-		for (int i = 0; i < peliculas.size(); i++) {
+		Iterator<Pelicula> iterador = peliculas.iterator();
+		
+		while (iterador.hasNext()) {
 			
-			Pelicula unaPelicula = peliculas.get(i);
+			Pelicula unaPelicula = iterador.next();
 			
 			duracionTotal += unaPelicula.obtenerDuracion();
 		}
