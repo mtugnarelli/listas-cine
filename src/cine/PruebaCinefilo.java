@@ -56,4 +56,15 @@ public class PruebaCinefilo {
 		Assert.assertEquals(1, peliculas.size());
 		Assert.assertEquals("Vuelo de pájaros", peliculas.get(0).obtenerTitulo());
 	}
+
+	@Test
+	public void buscarLaUltimaDelGeneroAccion() {
+		
+		Cinefilo cinefilo = new Cinefilo();
+		
+		Pelicula peliculaDeSuspenso = cinefilo.buscarLaUltimaDelGenero(peliculas, Genero.ACCION);
+		
+		Assert.assertEquals("El origen", peliculaDeSuspenso.obtenerTitulo());
+	}
+
 }

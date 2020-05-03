@@ -2,6 +2,7 @@ package cine;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Cinefilo {
 
@@ -42,7 +43,6 @@ public class Cinefilo {
 		return cuenta;
 	}
 
-
 	/**
 	 * @return la primera Película cuyo Género sea 'generoElegido' o null si ninguna lo es.
 	 */
@@ -66,6 +66,28 @@ public class Cinefilo {
 	}
 
 	/**
+	 * @return la última Película cuyo Género sea 'generoElegido' o null si ninguna lo es.
+	 */
+	public Pelicula buscarLaUltimaDelGenero(List<Pelicula> peliculas, Genero generoElegido) {
+
+		Pelicula peliculaEncontrada = null;
+		
+		ListIterator<Pelicula> iterador = peliculas.listIterator(peliculas.size());
+		
+		while (iterador.hasPrevious() && (peliculaEncontrada == null)) {
+			
+			Pelicula unaPelicula = iterador.previous();
+			
+			if (unaPelicula.obtenerGenero() == generoElegido) {
+				
+				peliculaEncontrada = unaPelicula;
+			}
+		}
+		
+		return peliculaEncontrada;
+	}
+	
+	/**
 	 * @post deja en 'peliculas' solo aquellas que son cortometrajes.
 	 */
 	public void filtrarCortometrajes(List<Pelicula> peliculas) {
@@ -82,4 +104,5 @@ public class Cinefilo {
 			}
 		}
 	}
+
 }
