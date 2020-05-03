@@ -15,6 +15,10 @@ public class Cartelera {
 		
 		List<Pelicula> peliculas = new LinkedList<Pelicula>();
 
+		Pelicula pelicula = new Pelicula(null, null, 0);
+		
+		peliculas.add(pelicula);
+		
 		return peliculas;
 
 	}
