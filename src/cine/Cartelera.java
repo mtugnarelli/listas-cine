@@ -1,4 +1,7 @@
 package cine;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,20 +17,38 @@ public class Cartelera {
 	public List<Pelicula> obtenerPeliculas() throws ExcepcionEnElCine {
 		
 		List<Pelicula> peliculas = new LinkedList<Pelicula>();
-		
-		Pelicula pelicula = crearPelicula("  Matrix  , ACCION  , 136  ");
-		
-		peliculas.add(pelicula);
 
-		Pelicula otraPelicula = crearPelicula("El resplandor, TERROR, 146");
-		
-		peliculas.add(otraPelicula);
-		
-		peliculas.add(otraPelicula);
-		
-		peliculas.add(null);
+		try {
+			
+			BufferedReader lector = new BufferedReader(new FileReader(archivo));
 
-		peliculas.add(crearPelicula("2001: Odisea del espacio, CIENCIA_FICCION, 142"));
+			try {
+				
+				String linea = lector.readLine();
+				
+				while (linea != null) {
+					
+					linea = linea.trim();
+					
+					if (!linea.isEmpty()) {
+						
+						Pelicula unaPelicula = crearPelicula(linea);
+						
+						peliculas.add(unaPelicula);
+					}
+					
+					linea = lector.readLine();
+				}
+				
+			} finally {
+
+				lector.close();
+			}
+		
+		} catch (IOException e) {
+			
+			throw new ExcepcionEnElCine("No se pudo leer el archivo de peliculas", e);
+		}
 		
 		return peliculas;
 	}
