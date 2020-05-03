@@ -35,4 +35,14 @@ public class PruebaCinefilo {
 		
 		Assert.assertEquals(2, peliculasDeAccion);
 	}
+	
+	@Test
+	public void buscarLaPrimeraDelGeneroSuspenso() {
+		
+		Cinefilo cinefilo = new Cinefilo();
+		
+		Pelicula peliculaDeSuspenso = cinefilo.buscarLaPrimeraDelGenero(peliculas, Genero.SUSPENSO);
+		
+		Assert.assertEquals("Pecados capitales", peliculaDeSuspenso.obtenerTitulo());
+	}
 }

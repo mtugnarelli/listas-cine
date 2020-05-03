@@ -41,4 +41,27 @@ public class Cinefilo {
 		
 		return cuenta;
 	}
+
+
+	/**
+	 * @return la primera Película cuyo Género sea 'generoElegido' o null si ninguna lo es.
+	 */
+	public Pelicula buscarLaPrimeraDelGenero(List<Pelicula> peliculas, Genero generoElegido) {
+
+		Pelicula peliculaEncontrada = null;
+		
+		Iterator<Pelicula> iterador = peliculas.iterator();
+		
+		while (iterador.hasNext() && (peliculaEncontrada == null)) {
+			
+			Pelicula unaPelicula = iterador.next();
+			
+			if (unaPelicula.obtenerGenero() == generoElegido) {
+				
+				peliculaEncontrada = unaPelicula;
+			}
+		}
+		
+		return peliculaEncontrada;
+	}
 }
