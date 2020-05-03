@@ -67,4 +67,13 @@ public class PruebaCinefilo {
 		Assert.assertEquals("El origen", peliculaDeSuspenso.obtenerTitulo());
 	}
 
+	@Test
+	public void buscarGeneros() {
+		
+		Cinefilo cinefilo = new Cinefilo();
+		
+		List<Genero> generos = cinefilo.buscarGeneros(peliculas);
+		
+		Assert.assertEquals(4, generos.size());
+	}
 }

@@ -1,5 +1,6 @@
 package cine;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -103,6 +104,26 @@ public class Cinefilo {
 				iterador.remove();
 			}
 		}
+	}
+
+	/**
+	 * @return una lista con todos los Géneros presentes en 'peliculas'.
+	 */
+	public List<Genero> buscarGeneros(List<Pelicula> peliculas) {
+		
+		List<Genero> generosEncontrados = new ArrayList<Genero>();
+		
+		for (Pelicula unaPelicula : peliculas) {
+			
+			Genero generoDeUnaPelicula = unaPelicula.obtenerGenero(); 
+			
+			if (! generosEncontrados.contains(generoDeUnaPelicula)) {
+				
+				generosEncontrados.add(generoDeUnaPelicula);
+			}
+		}
+		
+		return generosEncontrados;
 	}
 
 }
