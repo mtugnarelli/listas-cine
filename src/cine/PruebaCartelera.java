@@ -20,5 +20,7 @@ public class PruebaCartelera {
 		Assert.assertEquals("Matrix", primerPelicula.obtenerTitulo());
 		Assert.assertEquals(Genero.ACCION, primerPelicula.obtenerGenero());
 		Assert.assertEquals(136, primerPelicula.obtenerDuracion());
+		
+		Assert.assertEquals(5, peliculas.size());
 	}
 }
