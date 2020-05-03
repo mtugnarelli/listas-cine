@@ -20,30 +20,7 @@ public class Cartelera {
 
 		try {
 			
-			BufferedReader lector = new BufferedReader(new FileReader(archivo));
-
-			try {
-				
-				String linea = lector.readLine();
-				
-				while (linea != null) {
-					
-					linea = linea.trim();
-					
-					if (!linea.isEmpty()) {
-						
-						Pelicula unaPelicula = crearPelicula(linea);
-						
-						peliculas.add(unaPelicula);
-					}
-					
-					linea = lector.readLine();
-				}
-				
-			} finally {
-
-				lector.close();
-			}
+			cargar(peliculas);
 		
 		} catch (IOException e) {
 			
@@ -51,6 +28,34 @@ public class Cartelera {
 		}
 		
 		return peliculas;
+	}
+	
+	private void cargar(List<Pelicula> peliculas) throws IOException, ExcepcionEnElCine {
+		
+		BufferedReader lector = new BufferedReader(new FileReader(archivo));
+
+		try {
+			
+			String linea = lector.readLine();
+			
+			while (linea != null) {
+				
+				linea = linea.trim();
+				
+				if (!linea.isEmpty()) {
+					
+					Pelicula unaPelicula = crearPelicula(linea);
+					
+					peliculas.add(unaPelicula);
+				}
+				
+				linea = lector.readLine();
+			}
+			
+		} finally {
+
+			lector.close();
+		}
 	}
 	
 	private Pelicula crearPelicula(String linea) throws ExcepcionEnElCine {
