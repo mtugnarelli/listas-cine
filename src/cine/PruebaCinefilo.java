@@ -25,4 +25,14 @@ public class PruebaCinefilo {
 		
 		Assert.assertEquals(593, duracionTotal);
 	}
+	
+	@Test
+	public void contarLasDelGeneroAccion() {
+		
+		Cinefilo cinefilo = new Cinefilo();
+		
+		int peliculasDeAccion = cinefilo.contarLasDelGenero(peliculas, Genero.ACCION);
+		
+		Assert.assertEquals(2, peliculasDeAccion);
+	}
 }

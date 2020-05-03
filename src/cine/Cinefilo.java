@@ -6,7 +6,7 @@ import java.util.List;
 public class Cinefilo {
 
 	/**
-	 * @return devuelve la suma de todas las duraciones de las películas dadas.
+	 * @return la suma de todas las duraciones de las películas dadas.
 	 */
 	public int calcularDuracionTotal(List<Pelicula> peliculas) {
 
@@ -22,5 +22,23 @@ public class Cinefilo {
 		}
 		
 		return duracionTotal;
+	}
+
+	/**
+	 * @return la cantidad de películas que tienen como Género 'generoElegido'.
+	 */
+	public int contarLasDelGenero(List<Pelicula> peliculas, Genero generoElegido) {
+
+		int cuenta = 0;
+		
+		for (Pelicula unaPelicula : peliculas) {
+			
+			if (unaPelicula.obtenerGenero() == generoElegido) {
+				
+				cuenta++;
+			}
+		}
+		
+		return cuenta;
 	}
 }
